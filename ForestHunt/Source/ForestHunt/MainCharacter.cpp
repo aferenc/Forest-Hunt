@@ -45,6 +45,7 @@ AMainCharacter::AMainCharacter()
   GetCharacterMovement()->JumpZVelocity = 400.f;
   GetCharacterMovement()->AirControl = 0.5f; // Allow some control while airborne
   
+  // Initialize total and collected items and the countdown
   TotalItems = 9;
   CollectedItems = 0;
   
@@ -88,6 +89,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
   
 }
 
+// Forward/backward movement input
 void AMainCharacter::MoveForward(float Value)
 {
   if((Controller != nullptr) && (Value != 0.0f))
@@ -101,6 +103,7 @@ void AMainCharacter::MoveForward(float Value)
   }
 }
 
+// Right/left movement input
 void AMainCharacter::MoveRight(float Value)
 {
   if((Controller != nullptr) && (Value != 0.0f))
@@ -171,6 +174,7 @@ void AMainCharacter::Win()
   GetWorldTimerManager().SetTimer(WinMenuTimerHandle, this, &AMainCharacter::ReturnToMainMenu, 1.0f, true, 2.0f);
 }
 
+// Exit to the main menu mid-game
 void AMainCharacter::Quit()
 {
   UE_LOG(LogTemp, Warning, TEXT("Quitting game early"));
@@ -178,9 +182,10 @@ void AMainCharacter::Quit()
   ReturnToMainMenu();
 }
 
+// Return to the main menu
 void AMainCharacter::ReturnToMainMenu()
 {
-  // Clear any timers for returning to the main menu
+  // Clear any win/loss timers for returning to the main menu
   if(GetWorldTimerManager().IsTimerActive(LossMenuTimerHandle))
   {
     GetWorldTimerManager().ClearTimer(LossMenuTimerHandle);

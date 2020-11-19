@@ -4,6 +4,7 @@
 #include "MainCharAnimInstance.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
+// Gets the owner of the animation
 void UMainCharAnimInstance::NativeInitializeAnimation()
 {
   if(Pawn == nullptr)
@@ -12,6 +13,7 @@ void UMainCharAnimInstance::NativeInitializeAnimation()
   }
 }
 
+// Updates player character properties that determine the current animation
 void UMainCharAnimInstance::UpdateAnimationProperties()
 {
   if(Pawn == nullptr)

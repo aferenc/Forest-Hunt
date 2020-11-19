@@ -23,18 +23,23 @@ public:
   UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Item | Mesh")
   class UStaticMeshComponent* Mesh;
   
+  // Particles around the item while it's on the map
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item | Particles")
   class UParticleSystemComponent* IdleParticlesComponent;
   
+  // Particles that appear upon collision
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item | Particles")
   class UParticleSystem* OverlapParticles;
   
+  // Sound effect that plays upon collision
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item | Sounds")
   class USoundCue* OverlapSound;
   
+  // Rotation flag
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item | ItemProperties")
   bool bRotate;
   
+  // Rotation speed
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item | ItemProperties")
   float RotationRate;
 

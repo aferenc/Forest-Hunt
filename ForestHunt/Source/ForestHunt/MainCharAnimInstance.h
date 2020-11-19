@@ -16,8 +16,10 @@ class FORESTHUNT_API UMainCharAnimInstance : public UAnimInstance
   
 public:
   
+  // Gets the owner of the animation
   virtual void NativeInitializeAnimation() override;
   
+  // Updates player character properties that determine the current animation
   UFUNCTION(BlueprintCallable, Category = "AnimationProperties")
   void UpdateAnimationProperties();
   

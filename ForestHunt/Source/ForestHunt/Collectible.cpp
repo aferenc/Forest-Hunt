@@ -9,6 +9,7 @@ ACollectible::ACollectible()
   
 }
 
+// Called when player character overlaps with the item - increments the item counter
 void ACollectible::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
   Super::OnOverlapBegin(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex, bFromSweep, SweepResult);
@@ -24,6 +25,7 @@ void ACollectible::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AAct
   }
 }
 
+// Called when collision ends
 void ACollectible::OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
 {
   Super::OnOverlapEnd(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex);

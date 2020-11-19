@@ -15,9 +15,11 @@ public:
 	// Sets default values for this character's properties
 	AMainCharacter();
   
+  // Spring arm for camera
   UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
   class USpringArmComponent* CameraBoom;
   
+  // Camera that follows the player character
   UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
   class UCameraComponent* FollowCamera;
   
