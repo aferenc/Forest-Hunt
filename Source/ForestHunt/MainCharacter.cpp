@@ -57,9 +57,6 @@ AMainCharacter::AMainCharacter()
 void AMainCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-  
-  // Set the countdown timer
-  //GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AMainCharacter::AdvanceTimer, 1.0f, true);
 	
 }
 
@@ -78,8 +75,6 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
   
   PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
   PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-  
-  //PlayerInputComponent->BindAction("Quit", IE_Pressed, this, &AMainCharacter::Quit);
   
   PlayerInputComponent->BindAxis("MoveForward", this, &AMainCharacter::MoveForward);
   PlayerInputComponent->BindAxis("MoveRight", this, &AMainCharacter::MoveRight);
@@ -116,87 +111,3 @@ void AMainCharacter::MoveRight(float Value)
     AddMovementInput(Direction, Value);
   }
 }
-/*
-// Increments the player's item count by one
-void AMainCharacter::IncrementItems()
-{
-  // Increment the number of collected items
-  CollectedItems++;
-  // If you've collected all the items, you win!
-  if(CollectedItems == TotalItems)
-  {
-    Win();
-  }
-}
-
-// Advances the countdown timer by one
-void AMainCharacter::AdvanceTimer()
-{
-  // Decrement the amount of remaining time
-  --CountdownTime;
-  // If remaining time is zero or less...
-  if(CountdownTime < 1)
-  {
-    // Clear the timer
-    GetWorldTimerManager().ClearTimer(CountdownTimerHandle);
-    // And you lose
-    Lose();
-  }
-}
-
-// Called when the player runs out of time
-void AMainCharacter::Lose()
-{
-  UE_LOG(LogTemp, Warning, TEXT("Time's up!"));
-  if(LossSound)
-  {
-    UGameplayStatics::PlaySound2D(this, LossSound);
-  }
-  // Disable player input
-  this->DisableInput(GetWorld()->GetFirstPlayerController());
-  // Set a timer to delay going back to the main menu
-  GetWorldTimerManager().SetTimer(LossMenuTimerHandle, this, &AMainCharacter::ReturnToMainMenu, 1.0f, true, 2.0f);
-}
-
-// Called when the player collects every item
-void AMainCharacter::Win()
-{
-  UE_LOG(LogTemp, Warning, TEXT("You win!"));
-  if(WinSound)
-  {
-    UGameplayStatics::PlaySound2D(this, WinSound);
-  }
-  // Stop the countdown
-  GetWorldTimerManager().ClearTimer(CountdownTimerHandle);
-  // Disable player input
-  this->DisableInput(GetWorld()->GetFirstPlayerController());
-  // Set a timer to delay going back to the main menu
-  GetWorldTimerManager().SetTimer(WinMenuTimerHandle, this, &AMainCharacter::ReturnToMainMenu, 1.0f, true, 2.0f);
-}
-
-// Exit to the main menu mid-game
-void AMainCharacter::Quit()
-{
-  UE_LOG(LogTemp, Warning, TEXT("Quitting game early"));
-  GetWorldTimerManager().ClearTimer(CountdownTimerHandle);
-  ReturnToMainMenu();
-}
-
-// Return to the main menu
-void AMainCharacter::ReturnToMainMenu()
-{
-  // Clear any win/loss timers for returning to the main menu
-  if(GetWorldTimerManager().IsTimerActive(LossMenuTimerHandle))
-  {
-    GetWorldTimerManager().ClearTimer(LossMenuTimerHandle);
-  }
-  
-  if(GetWorldTimerManager().IsTimerActive(WinMenuTimerHandle))
-  {
-    GetWorldTimerManager().ClearTimer(WinMenuTimerHandle);
-  }
-  UE_LOG(LogTemp, Warning, TEXT("Returning to main menu..."));
-  // Open the Main Menu level
-  UGameplayStatics::OpenLevel(this, "MainMenu");
-}
-*/
