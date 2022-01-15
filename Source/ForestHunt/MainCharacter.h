@@ -58,8 +58,10 @@ public:
   // Handles advancing the counter every second
   FTimerHandle CountdownTimerHandle;
   
+  // Clears the countdown timer when the player wins
   FTimerHandle WinMenuTimerHandle;
   
+  // Clears the countdown timer when thep player runs out of time
   FTimerHandle LossMenuTimerHandle;
   
   // Sound effect played during a loss
