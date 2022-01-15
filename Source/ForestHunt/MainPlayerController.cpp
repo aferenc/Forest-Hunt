@@ -7,7 +7,7 @@
 void AMainPlayerController::BeginPlay()
 {
   Super::BeginPlay();
-  
+  /*
   // Create and display the HUD
   if(HUDOverlayAsset)
   {
@@ -16,4 +16,5 @@ void AMainPlayerController::BeginPlay()
   
   HUDOverlay->AddToViewport();
   HUDOverlay->SetVisibility(ESlateVisibility::Visible);
+   */
 }

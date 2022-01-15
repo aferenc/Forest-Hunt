@@ -8,7 +8,7 @@ ACollectible::ACollectible()
 {
   
 }
-
+/*
 // Called when player character overlaps with the item - increments the item counter
 void ACollectible::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -20,7 +20,7 @@ void ACollectible::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AAct
     AMainCharacter* MainChar = Cast<AMainCharacter>(OtherActor);
     if(MainChar)
     {
-      MainChar->IncrementItems();
+      //MainChar->IncrementItems();
     }
   }
 }
@@ -31,3 +31,4 @@ void ACollectible::OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor
   Super::OnOverlapEnd(OverlappedComponent, OtherActor, OtherComp, OtherBodyIndex);
   UE_LOG(LogTemp, Warning, TEXT("Collectible::OnOverlapEnd()"));
 }
+*/

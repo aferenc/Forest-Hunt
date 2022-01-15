@@ -59,7 +59,7 @@ void AMainCharacter::BeginPlay()
 	Super::BeginPlay();
   
   // Set the countdown timer
-  GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AMainCharacter::AdvanceTimer, 1.0f, true);
+  //GetWorldTimerManager().SetTimer(CountdownTimerHandle, this, &AMainCharacter::AdvanceTimer, 1.0f, true);
 	
 }
 
@@ -79,7 +79,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
   PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
   PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
   
-  PlayerInputComponent->BindAction("Quit", IE_Pressed, this, &AMainCharacter::Quit);
+  //PlayerInputComponent->BindAction("Quit", IE_Pressed, this, &AMainCharacter::Quit);
   
   PlayerInputComponent->BindAxis("MoveForward", this, &AMainCharacter::MoveForward);
   PlayerInputComponent->BindAxis("MoveRight", this, &AMainCharacter::MoveRight);
@@ -116,7 +116,7 @@ void AMainCharacter::MoveRight(float Value)
     AddMovementInput(Direction, Value);
   }
 }
-
+/*
 // Increments the player's item count by one
 void AMainCharacter::IncrementItems()
 {
@@ -199,4 +199,4 @@ void AMainCharacter::ReturnToMainMenu()
   // Open the Main Menu level
   UGameplayStatics::OpenLevel(this, "MainMenu");
 }
-
+*/

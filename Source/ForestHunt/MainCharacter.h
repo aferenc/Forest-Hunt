@@ -36,33 +36,47 @@ public:
   // The amount of time in the countdown, in seconds
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Countdown")
   int32 CountdownTime;
-  
+  /*
   // Add to the number of collected items
+  UFUNCTION()
   void IncrementItems();
   
   // Advance the timer by one second
+  UFUNCTION()
   void AdvanceTimer();
   
   // Win event
+  UFUNCTION()
   void Win();
   
   // Loss event
+  UFUNCTION()
   void Lose();
   
   // Quit to main menu mid-game
+  UFUNCTION()
   void Quit();
   
   // Returns to the main menu
+  UFUNCTION()
   void ReturnToMainMenu();
   
   // Handles advancing the counter every second
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Countdown")
   FTimerHandle CountdownTimerHandle;
   
   // Clears the countdown timer when the player wins
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Countdown")
   FTimerHandle WinMenuTimerHandle;
   
   // Clears the countdown timer when thep player runs out of time
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Countdown")
   FTimerHandle LossMenuTimerHandle;
+  */
+  
+  // Sound effect that plays upon touching an item
+  UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sounds")
+  class USoundCue* OverlapSound;
   
   // Sound effect played during a loss
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sounds")

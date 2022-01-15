@@ -34,8 +34,10 @@ void AItem::BeginPlay()
 {
 	Super::BeginPlay();
   
+  /*
   CollisionVolume->OnComponentBeginOverlap.AddDynamic(this, &AItem::OnOverlapBegin);
   CollisionVolume->OnComponentEndOverlap.AddDynamic(this, &AItem::OnOverlapEnd);
+   */
 	
 }
 
@@ -52,7 +54,7 @@ void AItem::Tick(float DeltaTime)
   }
 
 }
-
+/*
 // Called when the item begins collision with another actor
 void AItem::OnOverlapBegin(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -74,5 +76,5 @@ void AItem::OnOverlapEnd(UPrimitiveComponent* OverlappedComponent, AActor* Other
 {
   UE_LOG(LogTemp, Warning, TEXT("Super::OnOverlapEnd()"));
 }
-
+*/
 
