@@ -48,7 +48,6 @@ AMainCharacter::AMainCharacter()
   // Initialize total and collected items and the countdown
   TotalItems = 9;
   CollectedItems = 0;
-  
   CountdownTime = 200;
 
 }

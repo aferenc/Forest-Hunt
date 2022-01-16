@@ -24,7 +24,8 @@ AItem::AItem()
   IdleParticlesComponent = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("IdleParticlesComponent"));
   IdleParticlesComponent->SetupAttachment(GetRootComponent());
   
-  bRotate = false;
+  // Initialize rotation to false and set rotation speed
+  bItemRotates = false;
   RotationRate = 45.f;
   
 }
@@ -41,7 +42,7 @@ void AItem::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
   
-  if(bRotate)
+  if(bItemRotates)
   {
     FRotator Rotation = GetActorRotation();
     Rotation.Yaw += DeltaTime * RotationRate;

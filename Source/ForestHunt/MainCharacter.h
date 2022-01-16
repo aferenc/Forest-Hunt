@@ -23,8 +23,6 @@ public:
   UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
   class UCameraComponent* FollowCamera;
   
-  /** Player stats */
-  
   // The total number of collectible items on the field
   UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Player Stats")
   int32 TotalItems;
@@ -60,10 +58,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-  // Called for forward/backward input
+  // Forward/backward movement input
   void MoveForward(float Value);
   
-  // Called for side-to-side input
+  // Right/left movement input
   void MoveRight(float Value);
   
   /** Getters for FollowCamera and CameraBoom */

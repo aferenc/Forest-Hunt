@@ -37,7 +37,7 @@ public:
   
   // Rotation flag
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item | ItemProperties")
-  bool bRotate;
+  bool bItemRotates;
   
   // Rotation speed
   UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Item | ItemProperties")
